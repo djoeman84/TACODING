@@ -13,9 +13,9 @@ import stanford.karel.*;
 public class CollectNewspaperKarel extends Karel {
 	
 	public void run() {
-		gethestupidbeeperdude();
+		getTheStupidBeeperDude();
 		pickBeeper();
-		getthehellhome();
+		getTheHellHome();
 		
 	}
 	
@@ -30,7 +30,7 @@ public class CollectNewspaperKarel extends Karel {
 		turnLeft(); 
 	}
 
-	private void gethestupidbeeperdude() {
+	private void getTheStupidBeeperDude() {
 		move();
 		move();
 		turnRight();
@@ -39,7 +39,7 @@ public class CollectNewspaperKarel extends Karel {
 		move();
 	}
 
-	private void getthehellhome() {
+	private void getTheHellHome() {
 		turnAround();
 		move();
 		turnRight();
