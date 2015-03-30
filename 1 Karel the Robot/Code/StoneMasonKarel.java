@@ -24,9 +24,9 @@ public class StoneMasonKarel extends SuperKarel {
 		tryPutBeeper();
 		turnNorth();
 		buildOneColumn();
-		faceBase();
+		turnSouth();
 		moveToBase();
-		turnLeft();
+		turnEast();
 	}
 	private void tryPutBeeper() {
 		if (noBeepersPresent()) {
@@ -35,6 +35,16 @@ public class StoneMasonKarel extends SuperKarel {
 	}
 	private void turnNorth() {
 		while (notFacingNorth()) {
+			turnLeft();
+		}
+	}
+	private void turnSouth() {
+		while (notFacingSouth()) {
+			turnLeft();
+		}
+	}
+	private void turnEast() {
+		while (notFacingEast()) {
 			turnLeft();
 		}
 	}
@@ -50,11 +60,7 @@ public class StoneMasonKarel extends SuperKarel {
 		}
 
 	}
-	private void faceBase() {
-		while (notFacingSouth()) {
-			turnLeft();
-		}
-	}
+	
 	private void moveToBase() {
 		while (frontIsClear()) {
 			move();

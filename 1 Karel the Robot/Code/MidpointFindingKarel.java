@@ -14,6 +14,63 @@ import stanford.karel.*;
 
 public class MidpointFindingKarel extends SuperKarel {
 
-	// You fill in this part
-
+	public void run() {
+		findMidPoint();
+		deleteNonMidPointBeepers();
+	}
+	private void findMidPoint() {
+		while (noBeepersPresent()) {
+			moveToNoBeeper();
+			putBeeper();
+			turnAround();
+			move();
+		}
+		putBeeper();
+		
+	}
+	private void moveToNoBeeper() {
+		while (frontIsClear() && noBeepersPresent()) {
+			move();
+		}
+		if (beepersPresent()) {
+			backup();
+		}
+	}
+	private void backup() {
+		turnAround();
+		if (frontIsClear()) {
+			move();
+		}
+		turnAround();
+	}
+	private void deleteNonMidPointBeepers() {
+		faceEast();
+		putExtraBeeper();
+		moveToWall();
+		sweepOneRow();
+	}
+	
+	private void faceEast() {
+		if (notFacingEast()) {
+			turnRight();
+			move();
+		}
+	}
+	private void putExtraBeeper() {
+		putBeeper();
+	}
+	
+	private void moveToWall() {
+		while (frontIsClear()) {
+			move();
+		}
+		turnAround();
+	}
+	private void sweepOneRow() {
+		pickBeeper();
+		while (frontIsClear()) {
+			move();
+			pickBeeper();
+		}
+	}
 }
