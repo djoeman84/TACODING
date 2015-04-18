@@ -35,7 +35,7 @@ public class CheckerboardKarel extends SuperKarel {
 		//    If you can test this in isolation like
 		//    we did together to make sure sure sure
 		//    it works, I think it can help you build
-		//    the program more easily
+		//    the program more easily.
 		createFirstRow ();
 		createAllOtherRows();
 	}
