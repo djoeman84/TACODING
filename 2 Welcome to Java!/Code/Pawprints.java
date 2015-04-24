@@ -1,5 +1,7 @@
-/* TODO: Replace these file comments with a description of what your program
- * does.
+/* TODO:
+    
+   //How can I make two and move them?
+ * This great program will build two darling pawprints in separate locations to honor her great royal highness princess Isabella <3
  */
 import acm.program.*;
 import acm.graphics.*;
@@ -53,7 +55,66 @@ public class Pawprints extends GraphicsProgram {
 	 * @param x The x coordinate of the upper-left corner of the bounding box for the pawprint.
 	 * @param y The y coordinate of the upper-left corner of the bounding box for the pawprint.
 	 */
+	
 	private void drawPawprint(double x, double y) {
+		// drawPawprint(x + X_Offset, y + Y_Offset, Color.PINK);
+		 toe1();
+	     toe2();
+	     toe3();
+	     heel();
+		}
+	
+	// private X_Offset() {
 		
-	}
+		
+//	}
+	
+	// private Y_Offset() {
+		
+	// }
+		
+     
+    private GObject toe1() {
+         
+        GOval toe1 = new GOval(FIRST_TOE_OFFSET_X, FIRST_TOE_OFFSET_Y, TOE_WIDTH, TOE_HEIGHT);
+        toe1.setColor (Color.PINK);
+        toe1.setFillColor(Color.PINK);
+        toe1.setFilled(true);
+        add(toe1);
+        return toe1;
+         
+    }
+     
+    private GObject toe2() {
+         
+        GOval toe2 = new GOval(SECOND_TOE_OFFSET_X, SECOND_TOE_OFFSET_Y, TOE_WIDTH, TOE_HEIGHT);
+        toe2.setColor (Color.PINK);
+        toe2.setFillColor(Color.PINK);
+        toe2.setFilled(true);
+        add(toe2);
+        return toe2;
+         
+    }
+     
+    private GObject toe3() {
+         
+        GOval toe3 = new GOval(THIRD_TOE_OFFSET_X, THIRD_TOE_OFFSET_Y, TOE_WIDTH, TOE_HEIGHT);
+        toe3.setColor (Color.PINK);
+        toe3.setFillColor(Color.PINK);
+        toe3.setFilled(true);
+        add(toe3);
+        return toe3;
+    }
+
+     
+    private GObject heel() {
+         
+        GOval heel = new GOval(HEEL_OFFSET_X, HEEL_OFFSET_Y, HEEL_WIDTH, HEEL_HEIGHT);
+        heel.setColor (Color.PINK);
+        heel.setFillColor(Color.PINK);
+        heel.setFilled(true);
+        add(heel);
+        return heel;
+    }
+    
 }

@@ -10,7 +10,12 @@ import acm.program.*;
 
 public class BlankClass extends ConsoleProgram {
 	public void run() {
-		/* You fill this in */
+		for (int rowIndex = 0; rowIndex < 3; rowIndex++) {
+			for (int colIndex = 0; colIndex < 3; colIndex++) {
+				println("-- " + Math.sqrt(-1));
+				println("row: " + rowIndex + " col: " + colIndex);
+			}
+		}
 	}
 }
 
