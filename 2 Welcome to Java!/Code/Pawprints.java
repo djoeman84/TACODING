@@ -1,19 +1,12 @@
-/* TODO:
+//* THIS MAKES BABY BELLA'S TINY PAWS, GOD DAMN IT
     
-   //How can I make two and move them?
- * This great program will build two darling pawprints in separate locations to honor her great royal highness princess Isabella <3
- */
+  
 import acm.program.*;
 import acm.graphics.*;
 import java.awt.*;
 
 public class Pawprints extends GraphicsProgram {
-	/* Constants controlling the relative positions of the
-	 * three toes to the upper-left corner of the pawprint.
-	 * 
-	 * (Yes, I know that actual pawprints have four toes.
-	 * Just pretend it's a cartoon animal. ^_^)
-	 */
+	
 	private static final double FIRST_TOE_OFFSET_X = 0;
 	private static final double FIRST_TOE_OFFSET_Y = 20;
 	private static final double SECOND_TOE_OFFSET_X = 30;
@@ -44,77 +37,74 @@ public class Pawprints extends GraphicsProgram {
 	public static final int APPLICATION_HEIGHT = 220;
 	
 	public void run() {
-		drawPawprint(20, 20);
-		drawPawprint(180, 70);
+		drawPawprint(20, 20, Color.PINK);
+		drawPawprint(180, 70, Color.PINK);
 	}
 	
-	/**
-	 * Draws a pawprint. The parameters should specify the upper-left corner of the
-	 * bounding box containing that pawprint.
-	 * 
-	 * @param x The x coordinate of the upper-left corner of the bounding box for the pawprint.
-	 * @param y The y coordinate of the upper-left corner of the bounding box for the pawprint.
-	 */
 	
-	private void drawPawprint(double x, double y) {
-		// drawPawprint(x + X_Offset, y + Y_Offset, Color.PINK);
-		 toe1();
-	     toe2();
-	     toe3();
-	     heel();
-		}
-	
-	// private X_Offset() {
+	private void drawPawprint(double x, double y, Color pawColor) {
+		 toe(x + FIRST_TOE_OFFSET_X , y + FIRST_TOE_OFFSET_Y,   TOE_WIDTH,  TOE_HEIGHT,  pawColor);
+	     toe(x + SECOND_TOE_OFFSET_X, y + SECOND_TOE_OFFSET_Y,  TOE_WIDTH,  TOE_HEIGHT,  pawColor);
+	     toe(x + THIRD_TOE_OFFSET_X,  y + THIRD_TOE_OFFSET_Y,   TOE_WIDTH,  TOE_HEIGHT,  pawColor);
+	     toe(x + HEEL_OFFSET_X,       y + HEEL_OFFSET_Y,        HEEL_WIDTH, HEEL_HEIGHT, pawColor);
+	}
 		
-		
-//	}
-	
-	// private Y_Offset() {
-		
-	// }
-		
-     
-    private GObject toe1() {
-         
-        GOval toe1 = new GOval(FIRST_TOE_OFFSET_X, FIRST_TOE_OFFSET_Y, TOE_WIDTH, TOE_HEIGHT);
-        toe1.setColor (Color.PINK);
-        toe1.setFillColor(Color.PINK);
-        toe1.setFilled(true);
-        add(toe1);
-        return toe1;
-         
-    }
-     
-    private GObject toe2() {
-         
-        GOval toe2 = new GOval(SECOND_TOE_OFFSET_X, SECOND_TOE_OFFSET_Y, TOE_WIDTH, TOE_HEIGHT);
-        toe2.setColor (Color.PINK);
-        toe2.setFillColor(Color.PINK);
-        toe2.setFilled(true);
-        add(toe2);
-        return toe2;
-         
-    }
-     
-    private GObject toe3() {
-         
-        GOval toe3 = new GOval(THIRD_TOE_OFFSET_X, THIRD_TOE_OFFSET_Y, TOE_WIDTH, TOE_HEIGHT);
-        toe3.setColor (Color.PINK);
-        toe3.setFillColor(Color.PINK);
-        toe3.setFilled(true);
-        add(toe3);
-        return toe3;
-    }
-
-     
-    private GObject heel() {
-         
-        GOval heel = new GOval(HEEL_OFFSET_X, HEEL_OFFSET_Y, HEEL_WIDTH, HEEL_HEIGHT);
-        heel.setColor (Color.PINK);
-        heel.setFillColor(Color.PINK);
-        heel.setFilled(true);
-        add(heel);
-        return heel;
+    private void toe(double x, double y, double width, double height, Color color ) {
+    	 GOval toe = new GOval(x, y, width, height);
+         toe.setColor (color);
+         toe.setFillColor(color);
+         toe.setFilled(true);
+         add(toe);  	
     }
     
 }
+/**
+ * Draws a pawprint. The parameters should specify the upper-left corner of the
+ * bounding box containing that pawprint.
+ * 
+ * @param x The x coordinate of the upper-left corner of the bounding box for the pawprint.
+ * @param y The y coordinate of the upper-left corner of the bounding box for the pawprint.
+ */
+//
+//private GObject toe1(Color toeColor) {
+//    
+//    GOval toe1 = new GOval(FIRST_TOE_OFFSET_X, FIRST_TOE_OFFSET_Y, TOE_WIDTH, TOE_HEIGHT);
+//    toe1.setColor (toeColor);
+//    toe1.setFillColor(toeColor);
+//    toe1.setFilled(true);
+//    add(toe1);
+//    return toe1;
+//     
+//}
+// 
+//private GObject toe2(Color toeColor) {
+//     
+//    GOval toe2 = new GOval(SECOND_TOE_OFFSET_X, SECOND_TOE_OFFSET_Y, TOE_WIDTH, TOE_HEIGHT);
+//    toe2.setColor (toeColor);
+//    toe2.setFillColor(toeColor);
+//    toe2.setFilled(true);
+//    add(toe2);
+//    return toe2;
+//     
+//}
+// 
+//private GObject toe3(Color toeColor) {
+//     
+//    GOval toe3 = new GOval(THIRD_TOE_OFFSET_X, THIRD_TOE_OFFSET_Y, TOE_WIDTH, TOE_HEIGHT);
+//    toe3.setColor (toeColor);
+//    toe3.setFillColor(toeColor);
+//    toe3.setFilled(true);
+//    add(toe3);
+//    return toe3;
+//}
+//
+// 
+//private GObject heel(Color toeColor) {
+//     
+//    GOval heel = new GOval(HEEL_OFFSET_X, HEEL_OFFSET_Y, HEEL_WIDTH, HEEL_HEIGHT);
+//    heel.setColor (toeColor);
+//    heel.setFillColor(toeColor);
+//    heel.setFilled(true);
+//    add(heel);
+//    return heel;
+//}

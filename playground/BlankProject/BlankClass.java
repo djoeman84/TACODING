@@ -7,15 +7,34 @@
  */
 
 import acm.program.*;
+import acm.graphics.*;
+import java.awt.*;
 
-public class BlankClass extends ConsoleProgram {
+public class BlankClass extends GraphicsProgram {
+	
+	private static final double BOTTOM_DIAMETER = 200;
+	private static final double MIDDLE_DIAMETER = 125;
+		
 	public void run() {
-		for (int rowIndex = 0; rowIndex < 3; rowIndex++) {
-			for (int colIndex = 0; colIndex < 3; colIndex++) {
-				println("-- " + Math.sqrt(-1));
-				println("row: " + rowIndex + " col: " + colIndex);
-			}
-		}
+		
+		setBackground(Color.GRAY);
+		addSnowmanPart(BOTTOM_DIAMETER, getHeight() - BOTTOM_DIAMETER);
+		addSnowmanPart(MIDDLE_DIAMETER, getHeight() - BOTTOM_DIAMETER - MIDDLE_DIAMETER);
+		
+		  
 	}
+
+	private void addSnowmanPart(double diameter, double yCoord) {
+
+	  double x = (getWidth() - diameter) / 2.0;
+	  double y = yCoord;
+	  GOval part = new GOval(x, y, diameter, diameter);
+
+	  part.setFilled(true);
+	  part.setColor(Color.WHITE);
+	  add(part);
+
+	}
+
 }
 

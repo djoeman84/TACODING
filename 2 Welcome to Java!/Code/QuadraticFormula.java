@@ -14,7 +14,10 @@ public class QuadraticFormula extends ConsoleProgram {
 		double x2= (-b+Math.sqrt(y))/(2*a);
 		if (imaginary(y)) {
 			println("The equation has no real solution.");
-		} else {
+		} else if (sameAnswer(x1, x2)) {
+			println("The equation has one solution " + x1);
+			
+        } else {
 			println("The first solution is: " + x1);
     		println("The second solution is: " + x2);
         }
@@ -25,7 +28,14 @@ public class QuadraticFormula extends ConsoleProgram {
             return true;
         } else {
             return false;
-        }
+        } 
+    }
+    private boolean sameAnswer (double x1, double x2) {
+    	if (x1 == x2) {
+    		return true;
+    	} else {
+    		return false;
+    	}
     }
 
 }
