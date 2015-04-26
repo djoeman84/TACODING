@@ -10,31 +10,51 @@ import acm.program.*;
 import acm.graphics.*;
 import java.awt.*;
 
-public class BlankClass extends GraphicsProgram {
+public class BlankClass extends ConsoleProgram {
+		
+	public void run() {	
+		doDingo();
+		doMonkey();
+		doSoup(getSoupNumber());
+	}
 	
-	private static final double BOTTOM_DIAMETER = 200;
-	private static final double MIDDLE_DIAMETER = 125;
-		
-	public void run() {
-		
-		setBackground(Color.GRAY);
-		addSnowmanPart(BOTTOM_DIAMETER, getHeight() - BOTTOM_DIAMETER);
-		addSnowmanPart(MIDDLE_DIAMETER, getHeight() - BOTTOM_DIAMETER - MIDDLE_DIAMETER);
-		
-		  
+	private void doDingo() {
+		println("hello world I am a dingo");
+		doDingoBark();
+		doDingoBark();
+		doDingoBark();
 	}
-
-	private void addSnowmanPart(double diameter, double yCoord) {
-
-	  double x = (getWidth() - diameter) / 2.0;
-	  double y = yCoord;
-	  GOval part = new GOval(x, y, diameter, diameter);
-
-	  part.setFilled(true);
-	  part.setColor(Color.WHITE);
-	  add(part);
-
+	
+	private void doDingoBark() {
+		println("dingo RUFF");
 	}
+	
+	private void doMonkey() {
+		getBanannas(3);
+	}
+	
+	private void getBanannas(int numBanannas) {
+		for (int i = 0; i < numBanannas; i++) {
+			getBananna(i, numBanannas);
+		}
+	}
+	
+	private void getBananna(int currentBanannaIndex, int totalBanannas) {
+		println("getting bananna number " + (currentBanannaIndex + 1) + " of " + totalBanannas);
+	}
+	
+	private int getSoupNumber() {
+		return 3;
+	}
+	
+	private void doSoup(int numberSoups) {
+		println("SOUPPPP");
+		if (numberSoups > 0) {
+			doSoup(numberSoups - 1);	
+		}
+	}
+	
+
 
 }
 

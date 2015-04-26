@@ -14,29 +14,72 @@ public class Caterpillar extends GraphicsProgram {
 	 * Remember to add comments describing what each constant does!
 	 */ 
 	/* The total number of segments. */	
-	private static final int NUM_SEGMENTS = 5;
+	private static final int NUM_SEGMENTS = 10;
 	
 	/* The width and height of each segment of the body. */
-	private static final double SEGMENT_SIZE = 40;
+	private static final double SEGMENT_SIZE = 80;
 	
 	/* The horizontal and vertical spacing between the segments. */
-	private static final double SEGMENT_SPACING = 10;
+	private static final double SEGMENT_SPACING = 50;
 	
 	/* This designates the internal color of the body segments */
-	private static final Color FILL_IN_COLOR= Color.blue;
+	private static final Color FILL_IN_COLOR= Color.CYAN;
 	
 	/* This designates the border color for each body segment */
-	private static final Color BORDER_COLOR= Color.DARK_GRAY;
-
-
+	private static final Color BORDER_COLOR = Color.MAGENTA;
+	
+	/*This designates where the stupid body begins for the x axis*/
+	private static final double X_START= 12;
+	
+	/*This designates where the stupid body begins for the y axis*/
+	private static final double Y_START= 48;
+	
+	/*This makes the Y_offset*/
+	private static final double Y_OFFSET= 25;
+	
+	/*This makes the program go*/
+	
 	public void run() {
-		drawBody(x, y, numberSegments);
+		drawCaterpillar(X_START, Y_START, NUM_SEGMENTS);
+		//jason chris whole foods
 	}
-	private void drawBody (double x, double y) {
-		bodysegment(x,y, width, height, colorfill, colorborder)
+	/*This draws a whole caterpillar, depending on how many segments you give it*/
+	
+	private void drawCaterpillar (double x, double y, int numberSegments) {
+		for (int i = 0; i < numberSegments; i++) {
+			double offsetY = 0;
+			if (isEven(i)) {
+				offsetY = y + Y_OFFSET;
+			}
+			else {
+				offsetY = y;
+			}
+			
+			
+			bodySegment(x + i * SEGMENT_SPACING, offsetY, SEGMENT_SIZE);
+		}
 		
 	}
-	private void bodySegment (x, y, diameter, diameter, Color color, Color colorborder) {
+	
+	/**
+	 * isEven
+	 * @param value value to be evaluated
+	 * @return boolean: true if value is even
+	 */
+	private boolean isEven(int value) {
+		return (value % 2 == 0);
+	}
+	
+	/*This draws a body circle in the caterpillar*/
+	
+	private void bodySegment (double x, double y, double diameter) {
+		GOval segment= new GOval (x, y, diameter, diameter);
+		segment.setColor(BORDER_COLOR);
+		segment.setFilled(true);
+		segment.setFillColor(FILL_IN_COLOR);
+		add(segment);
+				
 	}
 	
 }
+

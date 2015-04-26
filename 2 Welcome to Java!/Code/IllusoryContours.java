@@ -20,35 +20,27 @@ public class IllusoryContours extends GraphicsProgram {
 	private static final double CIRCLE_SIZE = 70;
 	/*Gives the sweep measurement in degrees*/
 	 private static final double CIRCLE_SWEEP= 270;
-	
+	/*BLACK*/
+	 private static final Color FILLCOLOR= Color.BLACK;
+	 
 	public void run() {
 		createCircles();
 	}
 	private void createCircles() {
 	
-		GArc circle= new GArc( 0, 0, CIRCLE_SIZE, CIRCLE_SIZE, 0, CIRCLE_SWEEP);
+		createCircle(0.0, 0.0, 0.0);
+		createCircle(APPLICATION_WIDTH - CIRCLE_SIZE, APPLICATION_HEIGHT - CIRCLE_SIZE, 180);
+		createCircle(0, APPLICATION_HEIGHT - CIRCLE_SIZE , 90);
+		createCircle(APPLICATION_WIDTH- CIRCLE_SIZE, 0, 270);	
+	}
+	
+	private void createCircle(double xCoordinate, double yCoordinate, double circleStart) {
+		GArc circle = new GArc( xCoordinate, yCoordinate, CIRCLE_SIZE, CIRCLE_SIZE, circleStart, CIRCLE_SWEEP);
 		circle.setFilled(true);
-		circle.setColor(Color.BLACK);
+		circle.setColor(FILLCOLOR);
 		add(circle);
-		
-
-		GArc circle2= new GArc( APPLICATION_WIDTH - CIRCLE_SIZE, APPLICATION_HEIGHT - CIRCLE_SIZE, CIRCLE_SIZE, CIRCLE_SIZE, 180, CIRCLE_SWEEP);
-		circle2.setFilled(true);
-		circle2.setColor(Color.BLACK);
-		add(circle2);
-		
-
-		GArc circle3= new GArc( 0, APPLICATION_HEIGHT - CIRCLE_SIZE , CIRCLE_SIZE, CIRCLE_SIZE, 90, CIRCLE_SWEEP);
-		circle3.setFilled(true);
-		circle3.setColor(Color.BLACK);
-		add(circle3);
-		
-
-		GArc circle4= new GArc( APPLICATION_WIDTH- CIRCLE_SIZE, 0, CIRCLE_SIZE, CIRCLE_SIZE, 270, CIRCLE_SWEEP);
-		circle4.setFilled(true);
-		circle4.setColor(Color.BLACK);
-		add(circle4);
-	}		
+	}
+	
 	
 }
 

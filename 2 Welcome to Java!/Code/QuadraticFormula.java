@@ -31,11 +31,7 @@ public class QuadraticFormula extends ConsoleProgram {
         } 
     }
     private boolean sameAnswer (double x1, double x2) {
-    	if (x1 == x2) {
-    		return true;
-    	} else {
-    		return false;
-    	}
+    	return (x1 == x2);
     }
 
 }
