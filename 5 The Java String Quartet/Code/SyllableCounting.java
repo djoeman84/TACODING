@@ -1,13 +1,10 @@
-/* TODO: Replace these file comments with a description of what your program
- * does.
+/* This program attempts to count the number of syllables in any word supplied by a user. It does this based on vowel presence, accounting for silent "e"s at
+ * the end of words
  */
 import acm.program.*;
 
 public class SyllableCounting extends ConsoleProgram {
 	public void run() {
-		/* Repeatedly prompt the user for a word and print out the estimated
-		 * number of syllables in that word.
-		 */
 		while (true) {
 			String word = readLine("Enter a single word: ");
 			println("  Syllable count: " + syllablesIn(word));
@@ -22,7 +19,10 @@ public class SyllableCounting extends ConsoleProgram {
 	 * @return An estimate of the number of syllables in that word.
 	 */
 	private int syllablesIn(String word) {
-		// TODO: Delete this comment and implement this method.
+		for (int i = 0; i < word.length(); i++) {
+			char ch = word.charAt(i);
+		}
 		return 0;
 	}
+}
 }

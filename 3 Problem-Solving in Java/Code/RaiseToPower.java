@@ -16,9 +16,17 @@ public class RaiseToPower extends ConsoleProgram {
 	}
 	
 	private double raiseToPower(double base, int exponent) {
-		/* TODO: Delete this comment and replace the implementation of this method
-		 * with the correct implementation.
-		 */
-		return 0;
+		double total = 1;
+		for (int i = 0; i < exponent; i++) {
+			total *= base;
+		}
+		
+		return total;
 	}
+	
 }
+
+
+//for (int i=0; i < NUM_DAYS_PER_WEEK; i++) {
+//	int amountExercise= readInt(dayNumber+": ");
+//	total += amountExercise;
